@@ -1,0 +1,140 @@
+@import "reset.css";
+@import "theme-picker.css";
+@import "font.css";
+body {
+   /* dimentions */
+   --knot-height: 42px;
+   --tree-indentation: 18px;
+   --border-radius-left: 6px;
+   --border-radius-right: 16px;
+}
+body {
+   /* dark theme (default) */
+   --bg-color: rgb(36, 36, 36);
+   --knot-color: rgb(73, 73, 73);
+   --dragger-color: hsla(0, 0%, 100%, 0.21);
+   --border-color: black;
+   --gradient: linear-gradient(to right, hsl(0, 0%, 22%), hsl(0, 0%, 12%));
+   --text-color: hsla(0, 0%, 100%, 0.9);
+   --caret-color: black;
+   --text-bg: hsla(0, 0%, 0%, 0.26);
+   --text-sel-color: rgba(255, 255, 255, 0.3);
+}
+body.light {
+   /* light theme */
+   --bg-color: rgb(240, 240, 240);
+   --knot-color: rgb(248, 248, 248);
+   --dragger-color: rgba(0, 0, 0, 0.18);
+   --border-color: rgba(57, 57, 57, 0.4);
+   --gradient: linear-gradient(to right, rgb(219, 219, 219), rgb(255, 255, 255));
+   --text-color: hsla(0, 0%, 0%, 0.86);
+   --caret-color: rgb(178, 188, 202);
+   --text-bg: hsla(0, 0%, 0%, 0.14);
+   --text-sel-color: rgba(0, 0, 0, 0.24);
+}
+
+body {
+   background-color: var(--bg-color);
+}
+::selection {
+   background-color: var(--text-sel-color);
+}
+main {
+   padding: 8px;
+   font-family: Arial, sans-serif;
+   box-sizing: border-box;
+}
+.title {
+   background-color: var(--text-bg);
+   width: min-content;
+   width: -moz-fit-content;
+   font-size: 26px;
+   padding: 15px 26px;
+   border-radius: 18px;
+   color: var(--text-color);
+   margin: 12px 0 23px 6px;
+}
+.knot {
+   width: fit-content;
+   box-sizing: border-box;
+}
+.knot--isroot {
+   width: 100%;
+}
+.knot--isdisabled {
+   opacity: 0.4;
+}
+.knot--isdisabled .knot__pill {
+   box-shadow: none;
+   border: none;
+}
+.knot__priority {
+   border-radius: 8px;
+   width: 26px;
+   height: 26px;
+   background: #ffffff6b;
+   color: black;
+   text-align: center;
+   line-height: 26px;
+   border: 1px solid black;
+   margin-left: 6px;
+}
+.knot--isroot > .knot__wrapper {
+   display: none;
+}
+.knot__wrapper {
+   display: flex;
+   flex-flow: row nowrap;
+   align-items: center;
+}
+
+.knot__pill {
+   display: flex;
+   flex-flow: row nowrap;
+   width: min-content;
+   background: var(--knot-color);
+   border: 1px solid var(--border-color);
+   border-radius: var(--border-radius-handle) var(--border-radius-knot) var(--border-radius-knot)
+      var(--border-radius-handle);
+   margin-top: 3px;
+   box-shadow: inset 0px 3px 1px -2px hsla(0, 0%, 100%, 0.22);
+}
+
+.knot__dragger {
+   width: 6px;
+   border-radius: 6px;
+   margin: 6px;
+   background: var(--dragger-color);
+   cursor: all-scroll;
+}
+.knot__input {
+   font-family: roboto-mono;
+   background: transparent;
+   border: none;
+   padding-left: 8px;
+   padding-right: 16px;
+   height: var(--knot-height);
+   line-height: 100%;
+   color: rgba(255, 255, 255, 0.712);
+   border-left: 1px solid var(--border-color);
+   caret-color: var(--caret-color);
+   color: var(--text-color);
+}
+.knot__button {
+   font-size: 18px;
+   border-radius: 50px;
+   background: rgba(255, 255, 255, 0.329);
+}
+.knot__children {
+   box-sizing: border-box;
+   width: fit-content;
+   padding-left: var(--tree-indentation);
+   overflow: hidden;
+}
+/* .knot:not(.knot--isroot) .knot__children {
+  border-left: 1px solid rgba(255, 255, 255, 0.322);
+  margin-left: 6px;
+} */
+.knot__children--folded {
+   height: 0;
+}

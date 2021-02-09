@@ -1,0 +1,24 @@
+{
+   "name": "priority-tree",
+   "version": "0.0.1-experimental",
+   "description": "",
+   "scripts": {
+      "check": "tsc --noEmit",
+      "build": "esbuild src/index.ts --outfile=dist/bundle.js --tsconfig=./tsconfig.json  --target=es2020 --bundle --minify",
+      "watch": "esbuild src/index.ts --outfile=dist/bundle.js --tsconfig=./tsconfig.json  --target=es2020 --bundle --sourcemap --watch",
+      "format": "prettier -w 'src/**/*.ts'"
+   },
+   "prettier": {
+      "tabWidth": 3,
+      "quoteProps": "consistent",
+      "trailingComma": "all",
+      "printWidth": 120
+   },
+   "author": "",
+   "license": "ISC",
+   "devDependencies": {
+      "esbuild": "^0.8.36",
+      "prettier": "^2.2.1",
+      "typescript": "^4.1.3"
+   }
+}
