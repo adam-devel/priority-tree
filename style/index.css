@@ -2,7 +2,7 @@
 @import "theme-picker.css";
 @import "font.css";
 body {
-   /* dimentions */
+   /* dimensions */
    --knot-height: 32px;
    --tree-indentation: 18px;
    --border-radius-left: 6px;
