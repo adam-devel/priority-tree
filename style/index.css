@@ -3,7 +3,7 @@
 @import "font.css";
 body {
    /* dimentions */
-   --knot-height: 42px;
+   --knot-height: 32px;
    --tree-indentation: 18px;
    --border-radius-left: 6px;
    --border-radius-right: 16px;
@@ -94,8 +94,8 @@ main {
    width: min-content;
    background: var(--knot-color);
    border: 1px solid var(--border-color);
-   border-radius: var(--border-radius-handle) var(--border-radius-knot) var(--border-radius-knot)
-      var(--border-radius-handle);
+   border-radius: var(--border-radius-left) var(--border-radius-right) var(--border-radius-right)
+      var(--border-radius-left);
    margin-top: 3px;
    box-shadow: inset 0px 3px 1px -2px hsla(0, 0%, 100%, 0.22);
 }
