@@ -5,39 +5,39 @@ body {
    /* dimensions */
    --knot-height: 32px;
    --tree-indentation: 18px;
-   --border-radius-left: 6px;
-   --border-radius-right: 16px;
+   --knot-radius-right: 16px;
+   --knot-radius-left: 6px;
 }
 body {
-   /* dark theme (default) */
-   --bg-color: rgb(36, 36, 36);
-   --knot-color: rgb(73, 73, 73);
-   --dragger-color: hsla(0, 0%, 100%, 0.21);
-   --border-color: black;
-   --gradient: linear-gradient(to right, hsl(0, 0%, 22%), hsl(0, 0%, 12%));
-   --text-color: hsla(0, 0%, 100%, 0.9);
-   --caret-color: black;
-   --text-bg: hsla(0, 0%, 0%, 0.26);
-   --text-sel-color: rgba(255, 255, 255, 0.3);
+   /* colors (dark theme) */
+   --app-bg-color: rgb(36, 36, 36);
+   --app-text-color: hsla(0, 0%, 100%, 0.9);
+   --app-border-color: black;
+   --app-caret-color: black;
+   --app-selection-color: rgba(255, 255, 255, 0.3);
+   --app-surface-color: hsla(0, 0%, 0%, 0.26);
+   --knot-bg-color: rgb(73, 73, 73);
+   --knot-dragger-color: hsla(0, 0%, 100%, 0.21);
+   /* --gradient: linear-gradient(to right, hsl(0, 0%, 22%), hsl(0, 0%, 12%)); */
 }
 body.light {
-   /* light theme */
-   --bg-color: rgb(240, 240, 240);
-   --knot-color: rgb(248, 248, 248);
-   --dragger-color: rgba(0, 0, 0, 0.18);
-   --border-color: rgba(57, 57, 57, 0.4);
-   --gradient: linear-gradient(to right, rgb(219, 219, 219), rgb(255, 255, 255));
-   --text-color: hsla(0, 0%, 0%, 0.86);
-   --caret-color: rgb(178, 188, 202);
-   --text-bg: hsla(0, 0%, 0%, 0.14);
-   --text-sel-color: rgba(0, 0, 0, 0.24);
+   /* colors (light theme) */
+   --app-bg-color: rgb(240, 240, 240);
+   --knot-bg-color: rgb(248, 248, 248);
+   --knot-dragger-color: rgba(0, 0, 0, 0.18);
+   --app-border-color: rgba(57, 57, 57, 0.4);
+   --app-text-color: hsla(0, 0%, 0%, 0.86);
+   --app-caret-color: rgb(178, 188, 202);
+   --app-surface-color: hsla(0, 0%, 0%, 0.14);
+   --app-selection-color: rgba(0, 0, 0, 0.24);
+   /* --gradient: linear-gradient(to right, rgb(219, 219, 219), rgb(255, 255, 255)); */
 }
 
 body {
-   background-color: var(--bg-color);
+   background-color: var(--app-bg-color);
 }
 ::selection {
-   background-color: var(--text-sel-color);
+   background-color: var(--app-selection-color);
 }
 main {
    padding: 8px;
@@ -45,13 +45,13 @@ main {
    box-sizing: border-box;
 }
 .title {
-   background-color: var(--text-bg);
+   background-color: var(--app-surface-color);
    width: min-content;
    width: -moz-fit-content;
    font-size: 22px;
    padding: 8px 18px;
    border-radius: 18px;
-   color: var(--text-color);
+   color: var(--app-text-color);
    margin: 6px 0 16px 6px;
 }
 .knot {
@@ -71,8 +71,8 @@ main {
 .knot__priority {
    line-height: 0;
    text-align: center;
-   padding: 10px 10px 10px calc(var(--border-radius-left) + 10px);
-   margin-left: calc(var(--border-radius-left) * -1);
+   padding: 10px 10px 10px calc(var(--knot-radius-left) + 10px);
+   margin-left: calc(var(--knot-radius-left) * -1);
    border-radius: 0 10px 10px 0;
    font-size: 12px;
    font-weight: bold;
@@ -95,10 +95,9 @@ main {
    display: flex;
    flex-flow: row nowrap;
    width: min-content;
-   background: var(--knot-color);
-   border: 1px solid var(--border-color);
-   border-radius: var(--border-radius-left) var(--border-radius-right) var(--border-radius-right)
-      var(--border-radius-left);
+   background: var(--knot-bg-color);
+   border: 1px solid var(--app-border-color);
+   border-radius: var(--knot-radius-left) var(--knot-radius-right) var(--knot-radius-right) var(--knot-radius-left);
    box-shadow: inset 0px 3px 1px -2px hsla(0, 0%, 100%, 0.22);
    z-index: 1;
 }
@@ -107,7 +106,7 @@ main {
    width: 6px;
    border-radius: 6px;
    margin: 6px;
-   background: var(--dragger-color);
+   background: var(--knot-dragger-color);
    cursor: all-scroll;
 }
 .knot__input {
@@ -119,9 +118,9 @@ main {
    height: var(--knot-height);
    line-height: 100%;
    color: rgba(255, 255, 255, 0.712);
-   border-left: 1px solid var(--border-color);
-   caret-color: var(--caret-color);
-   color: var(--text-color);
+   border-left: 1px solid var(--app-border-color);
+   caret-color: var(--app-caret-color);
+   color: var(--app-text-color);
 }
 .knot__button {
    font-size: 18px;
