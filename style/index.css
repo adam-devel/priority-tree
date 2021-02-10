@@ -69,15 +69,17 @@ main {
    border: none;
 }
 .knot__priority {
-   border-radius: 8px;
-   width: 26px;
-   height: 26px;
+   line-height: 0;
+   text-align: center;
+   padding: 10px 10px 10px calc(var(--border-radius-left) + 10px);
+   margin-left: calc(var(--border-radius-left) * -1);
+   border-radius: 0 10px 10px 0;
+   font-size: 12px;
+   font-weight: bold;
    background: #ffffff6b;
    color: black;
-   text-align: center;
-   line-height: 26px;
-   border: 1px solid black;
-   margin-left: 6px;
+   opacity: 0.6;
+   z-index: 0;
 }
 .knot--isroot > .knot__wrapper {
    display: none;
@@ -98,6 +100,7 @@ main {
    border-radius: var(--border-radius-left) var(--border-radius-right) var(--border-radius-right)
       var(--border-radius-left);
    box-shadow: inset 0px 3px 1px -2px hsla(0, 0%, 100%, 0.22);
+   z-index: 1;
 }
 
 .knot__dragger {
