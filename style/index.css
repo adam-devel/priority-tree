@@ -53,7 +53,7 @@ body {
    padding: 8px 18px;
    border-radius: 18px;
    color: var(--app-text-color);
-   margin: 6px 0 16px 6px;
+   margin: 6px 0 12px 6px;
 }
 .knot {
    width: fit-content;
