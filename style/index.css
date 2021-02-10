@@ -39,7 +39,7 @@ body {
 ::selection {
    background-color: var(--app-selection-color);
 }
-main {
+.app {
    padding: 8px;
    font-family: Arial, sans-serif;
    box-sizing: border-box;
