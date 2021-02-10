@@ -2,10 +2,12 @@
 @import "font.css";
 body {
    /* dimensions */
-   --knot-height: 32px;
-   --tree-indentation: 18px;
-   --knot-radius-right: 16px;
+   --knot-text-size: 14px;
+   --knot-vertical-padding: 8px;
+   --knot-width: 200px;
+   --knot-radius-right: 14px;
    --knot-radius-left: 6px;
+   --tree-indentation: 18px;
 }
 body {
    /* colors (dark theme) */
@@ -103,10 +105,11 @@ body {
 }
 .knot__input {
    font-family: roboto-mono;
+   font-size: var(--knot-text-size);
+   padding: var(--knot-vertical-padding) 16px var(--knot-vertical-padding) 8px;
+   width: var(--knot-width);
    background: transparent;
    border: none;
-   padding-left: 8px;
-   padding-right: 16px;
    height: var(--knot-height);
    line-height: 100%;
    color: rgba(255, 255, 255, 0.712);
