@@ -48,7 +48,6 @@ body {
 .title {
    background-color: var(--app-surface-color);
    width: min-content;
-   width: -moz-fit-content;
    font-size: 22px;
    padding: 8px 18px;
    border-radius: 18px;
