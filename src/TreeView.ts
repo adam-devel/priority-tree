@@ -62,15 +62,17 @@ class ViewKnot {
    updatePriority() {
       this.priorityView.textContent = this.knot.getPriority().toString();
    }
-   hint() {
-      const bg = getComputedStyle(this.priorityView).background;
-      this.priorityView.animate(
-         {
-            background: [bg, "white", bg],
-            transform: ["scale(1)", "scale(1.2)", "scale(1)"],
-         },
-         { duration: 600 },
-      );
+   async hint() {
+      this.priorityView.animate({
+         transform: "translateX(0)",
+      }, { duration: 100, fill: "forwards" });
+      this.priorityView.animate({
+         background: "hsl(0, 0%, 80%)",
+      }, { duration: 300, fill: "forwards" });
+      this.priorityView.animate({
+         transform: "translateX(-20%)",
+         offset: 0.5,
+      }, { duration: 200 });
    }
 }
 
